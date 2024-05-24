@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>해당 아이디에 대한 정보</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+</head>
+<body>
+<div>
+  <h2>새로운 영화 개봉</h2>
+  <strong>Name: </strong><span th:text="${board.name}">name</span>
+    <br>
+  <strong>Content: </strong><span th:text="${board.content}">content</span>
+    <br>
+  <strong>Created At: </strong><span th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd hh:mm')}">createdAt</span>
+    <br><br>
+    <a th:href="@{/list}">List</a>
+    <a th:href="@{/updateform(id=${board.id})}">Edit</a>
+    <a th:href="@{/deleteform(id=${board.id})}">Delete</a>
+</div>
+</body>
+</html>
